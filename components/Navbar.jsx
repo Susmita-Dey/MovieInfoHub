@@ -9,12 +9,12 @@ import supabase from "@/utils/supabase";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [signedIn, setSignedIn] = useState();
+  const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
     async function getUserData() {
-      const { data, error } = await supabase.auth.refreshSession();
-      if (data.user) {
+      const { data, error } = await supabase.auth.getSession();
+      if (data.session) {
         setSignedIn(true);
       } else if (error) {
         setSignedIn(false);
@@ -27,7 +27,7 @@ export default function Navbar() {
   async function handleSignOut() {
     try {
       const res = await supabase.auth.signOut();
-      setSignedIn("");
+      setSignedIn(false);
       router.push("/");
       window.location.reload();
     } catch (err) {
@@ -62,7 +62,7 @@ export default function Navbar() {
               )}
             </button>
           </div>
-          {signedIn ? (
+          {!signedIn ? (
             <div
               className={
                 "lg:flex flex-grow items-center" +

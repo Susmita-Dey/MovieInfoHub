@@ -48,22 +48,28 @@ function Signup() {
       toast.success("Woah!! Your password is strong. 💪");
     }
 
-    // Signup user
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
-      //   options: {
-      //     emailRedirectTo: "http://localhost:3000/discover",
-      //   },
-    });
-    if (!error) {
-      router.push("/discover");
-    }
-    if (error) {
-      alert(error.message);
+    try {
+      const { user, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+      });
+
+      if (error) {
+        console.error(error);
+        // Handle error (show error message to the user, etc.)
+      } else {
+        console.log("Signup successful:", user);
+        toast.success("Signup successful. 🎉");
+        // Redirect the user or perform necessary actions
+        setSignupSuccess(true);
+        router.push("/discover");
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+      toast.error(error.message);
+      // Handle other types of errors (network errors, etc.)
     }
   };
-
   return (
     <section className="text-gray-900 min-h-full flex flex-col justify-center items-center py-12 px-6 lg:px-8">
       <div className="text-center text-3xl font-bold text-white">Sign Up</div>

@@ -59,7 +59,7 @@ function MovieCard() {
   }
 
   return (
-    <main className="w-screen text-white flex flex-col gap-4">
+    <main className="w-full text-white flex flex-col gap-4">
       <section className="grid grid-cols-4 place-items-center gap-4">
         {data
           ? data.results.map((movie) => (
