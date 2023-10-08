@@ -1,7 +1,3 @@
-# MovieInfoHub
-
-This is a simple web app that allows you to search for movies and get information about them. It uses the [TMDb API](http://www.themoviedb.org/) to get the movie information. It is built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and Supabase.
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
