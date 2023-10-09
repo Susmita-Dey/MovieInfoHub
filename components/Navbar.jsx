@@ -1,10 +1,10 @@
 "use client";
 
-import { opensans } from "@/context/fonts";
+import { nunito, opensans, roboto } from "@/context/fonts";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaGithub, FaTimes } from "react-icons/fa";
 import supabase from "@/utils/supabase";
 import { toast } from "react-hot-toast";
 
@@ -47,13 +47,24 @@ export default function Navbar() {
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <div className="w-full relative flex flex-row justify-center items-center ">
-              <Link
-                className="lg:text-2xl text-xl text-center font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-                href="/"
-              >
-                MovieInfoHub
-              </Link>
+            <div
+              className={`w-full relative flex flex-row justify-center items-center ${nunito.className}`}
+            >
+              {signedIn === true ? (
+                <Link
+                  className="lg:text-2xl text-xl text-center font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
+                  href="/discover"
+                >
+                  MovieInfoHub
+                </Link>
+              ) : (
+                <Link
+                  className="lg:text-2xl text-xl text-center font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+                  href="/"
+                >
+                  MovieInfoHub
+                </Link>
+              )}
             </div>
             <button
               className="text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -71,7 +82,7 @@ export default function Navbar() {
             <div
               className={
                 "lg:flex flex-grow items-center" +
-                (navbarOpen ? "flex" : " hidden")
+                (navbarOpen ? "flex bg-black w-full" : " hidden")
               }
             >
               <ul className="flex flex-col justify-center items-center lg:flex-row list-none lg:ml-auto">
@@ -102,9 +113,27 @@ export default function Navbar() {
                 <li className="nav-item">
                   <Link
                     className="px-3 py-2 flex items-center text-base font-medium leading-snug hover:opacity-75"
-                    href="/contact"
+                    href="/top-rated"
                   >
-                    Contact
+                    Top Rated
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="px-3 py-2 flex items-center text-base font-medium leading-snug hover:opacity-75"
+                    href="/upcoming"
+                  >
+                    Upcoming
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="px-3 py-2 flex items-center text-base font-medium leading-snug hover:opacity-75"
+                    href="https://github.com/Susmita-Dey/MovieInfoHub"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <FaGithub className="text-xl font-bold" />
                   </Link>
                 </li>
               </ul>
@@ -123,7 +152,7 @@ export default function Navbar() {
             <div
               className={
                 "lg:flex flex-grow items-center" +
-                (navbarOpen ? "flex" : " hidden")
+                (navbarOpen ? "flex bg-black w-full" : " hidden")
               }
             >
               <ul className="flex flex-col justify-center items-center  lg:flex-row list-none lg:ml-auto">
@@ -133,14 +162,6 @@ export default function Navbar() {
                     href="/"
                   >
                     Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="px-3 py-2 flex items-center text-base font-medium leading-snug hover:opacity-75"
-                    href="/#about"
-                  >
-                    About
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -162,9 +183,9 @@ export default function Navbar() {
                 <li className="nav-item">
                   <Link
                     className="px-3 py-2 flex items-center text-base font-medium leading-snug hover:opacity-75"
-                    href="/contact"
+                    href="https://github.com/Susmita-Dey/MovieInfoHub"
                   >
-                    Contact
+                    <FaGithub className="text-xl font-bold" />
                   </Link>
                 </li>
               </ul>

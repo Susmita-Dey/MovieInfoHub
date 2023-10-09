@@ -48,7 +48,7 @@ function Login() {
   return (
     <section className="text-gray-900 min-h-full flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8">
       <div className="flex flex-col text-center gap-2">
-        <h2 className="text-3xl font-bold ">Welcome back!</h2>
+        <h2 className="text-3xl font-bold text-white">Welcome back!</h2>
         <p className="text-lg text-gray-500">
           Please enter your credentials to login
         </p>
@@ -108,7 +108,7 @@ function Login() {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium  bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium  bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 text-white focus:ring-offset-2 focus:ring-red-500"
                 onClick={loginUser}
               >
                 Sign In
