@@ -69,7 +69,7 @@ function Signup() {
   };
   return (
     <section className="text-gray-900 min-h-full flex flex-col justify-center items-center py-12 px-6 lg:px-8">
-      <div className="text-center text-3xl font-bold ">Sign Up</div>
+      <div className="text-center text-3xl font-bold text-white">Sign Up</div>
       <div className="mt-8 sm:mx-auto sm:w-full max-w-md">
         <div className="bg-gray-300 py-8 shadow rounded-lg px-8">
           <form className="space-y-6" action="#" method="POST">
@@ -129,7 +129,7 @@ function Signup() {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 "
+                className="w-full text-white flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 "
                 onClick={signupUser}
               >
                 Create account
