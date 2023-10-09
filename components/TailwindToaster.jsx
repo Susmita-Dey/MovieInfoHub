@@ -8,7 +8,7 @@ const TailwindToaster = () => {
         <Transition
           appear
           show={t.visible}
-          className="transform p-4 flex bg-red-900 text-white rounded shadow-lg"
+          className="transform p-4 flex bg-red-900  rounded shadow-lg"
           enter="transition-all duration-150"
           enterFrom="opacity-0 scale-50"
           enterTo="opacity-100 scale-100"

@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-4 justify-center w-full h-full">
           <h2 className='text-6xl font-bold'>Discover the Magic of Movies</h2>
           <p className='text-2xl font-medium'>Explore a world of entertainment. Find information about your favorite movies, actors, and directors.</p>
-          <Link href={'/signup'} className="bg-red-600 hover:bg-red-800 text-white text-lg font-bold py-4 px-6 rounded-md mt-4">
+          <Link href={'/signup'} className="bg-red-600 hover:bg-red-800  text-lg font-bold py-4 px-6 rounded-md mt-4">
             Get Started
           </Link>
         </div>
