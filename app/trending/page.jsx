@@ -9,7 +9,7 @@ export default function Trending() {
   return (
     <QueryClientProvider client={queryClient}>
       <MovieCard
-        apiName={"Trending"}
+        apiName={"getTrendingMovies"}
         heading={"Trending"}
         showVotes={false}
         showDate={true}

@@ -9,7 +9,7 @@ export default function Upcoming() {
   return (
     <QueryClientProvider client={queryClient}>
       <MovieCard
-        apiName={"Upcoming"}
+        apiName={"getUpcomingMovies"}
         heading={"Upcoming"}
         showVotes={false}
         showDate={false}

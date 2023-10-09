@@ -9,7 +9,7 @@ export default function Popular() {
   return (
     <QueryClientProvider client={queryClient}>
       <MovieCard
-        apiName={"Popular"}
+        apiName={"getPopularMovies"}
         heading={"Popular"}
         showVotes={false}
         showDate={true}

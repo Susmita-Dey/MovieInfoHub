@@ -25,8 +25,7 @@ function MovieCard({ heading, apiName, showDate, showVotes }) {
 
   const { data, isLoading } = useQuery({
     queryKey: ["movies"],
-    queryFn: () =>
-      fetch(`/api/get${apiName}Movies`).then((resp) => resp.json()),
+    queryFn: () => fetch(`/api/${apiName}`).then((resp) => resp.json()),
   });
 
   if (isLoading) {

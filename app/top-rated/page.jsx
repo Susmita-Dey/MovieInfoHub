@@ -9,7 +9,7 @@ export default function TopRated() {
   return (
     <QueryClientProvider client={queryClient}>
       <MovieCard
-        apiName={"TopRated"}
+        apiName={"getTopRatedMovies"}
         heading={"Top Rated"}
         showVotes={true}
         showDate={false}
