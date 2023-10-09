@@ -9,7 +9,7 @@ export default function Discover() {
   return (
     <QueryClientProvider client={queryClient}>
       <MovieCard
-        apiName={""}
+        apiName={"getMovies"}
         heading={"Discover"}
         showVotes={true}
         showDate={true}
