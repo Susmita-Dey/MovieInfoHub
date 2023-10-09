@@ -4,16 +4,16 @@ This is a simple web app that allows you to search for movies and get informatio
 
 ## Features
 
-- Search for movies
+
 - Get information about movies
-- Save movies to your watchlist
 - Authentication with Supabase
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Screenshots
 
-![Screenshot 1](https://user-images.githubusercontent.com/25122875/132134818-9b0b8b9a-2b0a-4b0a-9b9a-2b0b0b0b0b0b.png)
+![image](https://github.com/Susmita-Dey/MovieInfoHub/assets/79099734/78b35694-c541-4baa-8784-f66b626f44c1)
+
 
 ## Getting Started
 
