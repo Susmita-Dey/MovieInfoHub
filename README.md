@@ -13,7 +13,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Screenshots
 
 ![image](https://github.com/Susmita-Dey/MovieInfoHub/assets/79099734/78b35694-c541-4baa-8784-f66b626f44c1)
+![image](https://github.com/Susmita-Dey/MovieInfoHub/assets/79099734/b89bd3ef-5763-43c9-98e1-624937494de2)
 
+## Page Speed and SEO
+SEO score is 100
+
+Check the report here:- https://pagespeed.web.dev/analysis/https-movieinfohub-vercel-app/ejipoybynd?form_factor=desktop
 
 ## Getting Started
 
