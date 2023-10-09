@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import supabase from "@/utils/supabase";
+import { toast } from "react-hot-toast";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -23,15 +24,19 @@ export default function Navbar() {
     getUserData();
   }, []);
 
+  // const { error } = await supabase.auth.signOut()
   const router = useRouter();
   async function handleSignOut() {
     try {
       const res = await supabase.auth.signOut();
+      console.log(res);
+      toast.success("Logged out successfully");
       setSignedIn(false);
       router.push("/");
       window.location.reload();
     } catch (err) {
       console.log(err);
+      alert(err);
     }
   }
 
@@ -62,15 +67,14 @@ export default function Navbar() {
               )}
             </button>
           </div>
-          {!signedIn ? (
+          {signedIn === true ? (
             <div
               className={
                 "lg:flex flex-grow items-center" +
                 (navbarOpen ? "flex" : " hidden")
               }
-              id="example-navbar-danger"
             >
-              <ul className="flex flex-col justify-center items-center bg-gray-950 lg:flex-row list-none lg:ml-auto">
+              <ul className="flex flex-col justify-center items-center lg:flex-row list-none lg:ml-auto">
                 <li className="nav-item">
                   <Link
                     className="px-3 py-2 flex items-center text-base font-medium leading-snug hover:opacity-75"
@@ -104,7 +108,7 @@ export default function Navbar() {
                   </Link>
                 </li>
               </ul>
-              <div className="flex flex-col bg-gray-950 lg:flex-row list-none">
+              <div className="flex flex-col  lg:flex-row list-none">
                 {/* <Link href={"/"}> */}
                 <button
                   onClick={handleSignOut}
@@ -121,9 +125,8 @@ export default function Navbar() {
                 "lg:flex flex-grow items-center" +
                 (navbarOpen ? "flex" : " hidden")
               }
-              id="example-navbar-danger"
             >
-              <ul className="flex flex-col justify-center items-center bg-gray-950 lg:flex-row list-none lg:ml-auto">
+              <ul className="flex flex-col justify-center items-center  lg:flex-row list-none lg:ml-auto">
                 <li className="nav-item">
                   <Link
                     className="px-3 py-2 flex items-center text-base font-medium leading-snug hover:opacity-75"
@@ -165,7 +168,7 @@ export default function Navbar() {
                   </Link>
                 </li>
               </ul>
-              <div className="flex flex-col bg-gray-950 lg:flex-row list-none">
+              <div className="flex flex-col  lg:flex-row list-none">
                 <Link href="/signup">
                   <button className="px-4 py-2 w-full rounded-md font-medium bg-red-600 hover:bg-red-700">
                     Sign Up

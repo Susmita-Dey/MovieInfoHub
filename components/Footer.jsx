@@ -14,12 +14,12 @@ export default function Footer() {
                 href="https://nextjs.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex text-blue-500 mx-2 -mt-3 font-medium"
+                className="flex text-red-500 mx-2 -mt-3 font-medium"
               >
                 <svg
                   height="1509"
                   preserveAspectRatio="xMidYMid"
-                  className="text-white w-12 h-12 fill-white"
+                  className=" w-12 h-12 fill-white"
                   viewBox="0 0 512 308.883"
                   width="2500"
                   xmlns="http://www.w3.org/2000/svg"

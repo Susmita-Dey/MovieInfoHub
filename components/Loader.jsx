@@ -20,7 +20,7 @@ const Loader = ({ width = "w-24", height = "h-16" }) => {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only text-white">Loading...</span>
+      <span className="sr-only ">Loading...</span>
     </div>
     // </div>
   );

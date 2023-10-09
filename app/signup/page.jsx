@@ -11,7 +11,6 @@ import supabase from "@/utils/supabase";
 function Signup() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
-  const [signupSuccess, setSignupSuccess] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -60,19 +59,17 @@ function Signup() {
       } else {
         console.log("Signup successful:", user);
         toast.success("Signup successful. 🎉");
-        // Redirect the user or perform necessary actions
-        setSignupSuccess(true);
+        // Redirect the user to discover page
         router.push("/discover");
       }
     } catch (error) {
       console.error("Error during signup:", error);
       toast.error(error.message);
-      // Handle other types of errors (network errors, etc.)
     }
   };
   return (
     <section className="text-gray-900 min-h-full flex flex-col justify-center items-center py-12 px-6 lg:px-8">
-      <div className="text-center text-3xl font-bold text-white">Sign Up</div>
+      <div className="text-center text-3xl font-bold ">Sign Up</div>
       <div className="mt-8 sm:mx-auto sm:w-full max-w-md">
         <div className="bg-gray-300 py-8 shadow rounded-lg px-8">
           <form className="space-y-6" action="#" method="POST">
@@ -132,7 +129,7 @@ function Signup() {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 text-white"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 "
                 onClick={signupUser}
               >
                 Create account
@@ -164,30 +161,6 @@ function Signup() {
                     </div> */}
         </div>
         <TailwindToaster />
-      </div>
-      <div>
-        {signupSuccess && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-md shadow-lg">
-              <h2 className="text-2xl font-medium mb-4">Check Your Email</h2>
-              <p className="text-lg text-gray-900">
-                Hi there! 👋 Kindly close this window and check your email for a
-                verification link. Click the link to verify your email address.
-              </p>
-              <div className="flex justify-end mt-4">
-                <button
-                  className="px-4 py-2 text-lg rounded-md bg-red-600 text-white hover:bg-red-700"
-                  onClick={() => {
-                    setSignupSuccess(false);
-                    window.location.close();
-                  }}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

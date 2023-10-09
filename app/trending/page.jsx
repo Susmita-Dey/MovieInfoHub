@@ -14,7 +14,7 @@ import NotLoggedIn from "@/components/NotLoggedIn";
 
 const queryClient = new QueryClient();
 
-export default function Discover() {
+export default function Trending() {
   return (
     <QueryClientProvider client={queryClient}>
       <MovieCard />
@@ -60,7 +60,7 @@ function MovieCard() {
 
   return (
     <main className="w-full flex flex-col gap-4">
-      <h2 className="text-3xl font-bold text-center my-5">Discover Movies</h2>
+      <h2 className="text-3xl font-bold text-center my-5">Trending Movies</h2>
       <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-rows-1 place-items-center gap-4">
         {data
           ? data.results.map((movie) => (
