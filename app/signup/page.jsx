@@ -13,6 +13,7 @@ function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [signupSuccess, setSignupSuccess] = useState(false);
 
   // Signup users
   const signupUser = async (e) => {
@@ -48,19 +49,23 @@ function Signup() {
     }
 
     try {
-      const { user, error } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-      });
+      const { user, error } = await supabase.auth.signUp(
+        {
+          email: email,
+          password: password,
+        },
+        {
+          redirectTo: "/discover",
+        }
+      );
 
       if (error) {
         console.error(error);
-        // Handle error (show error message to the user, etc.)
+        toast.error(error.message);
       } else {
         console.log("Signup successful:", user);
         toast.success("Signup successful. 🎉");
-        // Redirect the user to discover page
-        router.push("/discover");
+        setSignupSuccess(true);
       }
     } catch (error) {
       console.error("Error during signup:", error);
@@ -161,6 +166,29 @@ function Signup() {
                     </div> */}
         </div>
         <TailwindToaster />
+      </div>
+      <div>
+        {signupSuccess && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+            <div className="bg-white p-6 rounded-md shadow-lg">
+              <h2 className="text-2xl font-medium mb-4">Check Your Email</h2>
+              <p className="text-lg text-gray-900">
+                Hi there! 👋 Kindly close this window and check your email for a
+                verification link. Click the link to verify your email address.
+              </p>
+              <div className="flex justify-end mt-4">
+                <button
+                  className="px-4 py-2 text-lg rounded-md bg-red-600 text-white hover:bg-red-700"
+                  onClick={() => {
+                    setSignupSuccess(false);
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

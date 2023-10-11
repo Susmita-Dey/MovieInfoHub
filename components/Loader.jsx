@@ -1,7 +1,7 @@
 const Loader = ({ width = "w-24", height = "h-16" }) => {
   return (
     // <div
-    //     className="inline-block h-8 w-8 border-pink-700 mt-2 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-secondary motion-reduce:animate-[spin_1.5s_linear_infinite]"
+    //     className="inline-block h-8 w-8 border-red-700 mt-2 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-secondary motion-reduce:animate-[spin_1.5s_linear_infinite]"
     //     role="status">
     <div role="status" className="flex justify-center items-center">
       <svg

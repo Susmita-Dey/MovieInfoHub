@@ -7,17 +7,20 @@ import Loader from "./Loader";
 import { useQuery } from "@tanstack/react-query";
 import supabase from "@/utils/supabase";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 function MovieCard({ heading, apiName, showDate, showVotes }) {
   const [signedIn, setSignedIn] = useState();
 
   useEffect(() => {
     async function getUserData() {
-      const { data, error } = await supabase.auth.refreshSession();
+      const { data, error } = await supabase.auth.getUser();
       if (data.session) {
+        window.location.reload();
         setSignedIn(true);
       } else if (error) {
         setSignedIn(false);
+        toast.error("Please sign in to continue.");
       }
     }
     getUserData();
